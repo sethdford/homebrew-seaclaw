@@ -4,23 +4,25 @@
 class Seaclaw < Formula
   desc "Autonomous AI assistant runtime — minimal C11 binary"
   homepage "https://sethdford.github.io/seaclaw/"
+  url "https://github.com/sethdford/seaclaw/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "aa9fea9462c57833aa29fd7493d7f2697a094c306684a7ea4c76c8e9bc5967dc"
   license "MIT"
   head "https://github.com/sethdford/seaclaw.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "sqlite"
-  depends_on "curl" => :optional
+  depends_on "curl"
 
   def install
     args = %w[
       -DCMAKE_BUILD_TYPE=MinSizeRel
       -DSC_ENABLE_LTO=ON
       -DSC_ENABLE_SQLITE=ON
+      -DSC_ENABLE_CURL=ON
     ]
-    args << "-DSC_ENABLE_CURL=#{build.with?("curl") ? "ON" : "OFF"}"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build"
+    system "cmake", "--build", "build", "--target", "seaclaw"
     bin.install "build/seaclaw"
     bash_completion.install "completions/seaclaw.bash" => "seaclaw"
     zsh_completion.install "completions/seaclaw.zsh" => "_seaclaw"

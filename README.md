@@ -1,23 +1,30 @@
-# homebrew-seaclaw
+# Homebrew Tap for SeaClaw
 
-Homebrew tap for [SeaClaw](https://github.com/sethdford/seaclaw) -- autonomous AI assistant runtime in C11.
+[SeaClaw](https://github.com/sethdford/seaclaw) is an autonomous AI assistant runtime written in C11. 239 KB binary. Zero dependencies beyond libc. 50+ AI providers.
 
 ## Install
+
+```bash
+brew tap sethdford/seaclaw
+brew install seaclaw
+```
+
+## Install from HEAD (latest development)
 
 ```bash
 brew tap sethdford/seaclaw
 brew install --HEAD seaclaw
 ```
 
-With libcurl support (for cloud AI providers):
+## Usage
 
 ```bash
-brew install --HEAD seaclaw --with-curl
+seaclaw --help
+seaclaw doctor
+seaclaw agent "Hello, world!"
 ```
 
-## What is SeaClaw?
+## More info
 
-239 KB binary. Under 5 MB RAM. Under 2 ms startup. 50+ AI providers. 20 channels. Runs on anything.
-
-- [Documentation](https://sethdford.github.io/seaclaw/)
-- [Source](https://github.com/sethdford/seaclaw)
+- Website: https://sethdford.github.io/seaclaw/
+- Repository: https://github.com/sethdford/seaclaw
