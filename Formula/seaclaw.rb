@@ -5,7 +5,7 @@ class Seaclaw < Formula
   desc "Autonomous AI assistant runtime — minimal C11 binary"
   homepage "https://sethdford.github.io/seaclaw/"
   url "https://github.com/sethdford/seaclaw/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "aa9fea9462c57833aa29fd7493d7f2697a094c306684a7ea4c76c8e9bc5967dc"
+  sha256 "f7e3132e558f30235d4e0a02e0c2b8fde6885620dfe584b70a990bc60b38f06e"
   license "MIT"
   head "https://github.com/sethdford/seaclaw.git", branch: "main"
 
